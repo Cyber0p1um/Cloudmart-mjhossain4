@@ -84,7 +84,7 @@ cloud-native app structure.
 
 ## 📦 Docker Hub Repository
 
-📍 **https://hub.docker.com/r/mnmahy34/cloudmart-api**
+📍 **https://hub.docker.com/r/mjhossain4/cloudmart-api**
 
 Tags: - `latest` (auto-deployed through GitHub Actions)
 
@@ -147,4 +147,4 @@ Open:
 
 ## 🌐 Production Deployment URL
 
-**http://cloudmart-1903054.canadacentral.azurecontainer.io/**
+**http://cloudmart-1904593.canadacentral.azurecontainer.io/**
