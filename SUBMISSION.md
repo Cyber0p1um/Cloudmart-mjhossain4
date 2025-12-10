@@ -4,21 +4,21 @@
 
 ### Student Information
 
-Student ID: 138145230
+Student ID: 130870231
 
-Name: Mahdy Nesar Mahy
+Name: Md Jonayed Hossain
 
 Course: CPS451NIA
 
 Institution: Seneca College
 
-Submission Date: 2nd December 2025
+Submission Date: 9th December 2025
 
 ---
 
 ### Live Application URL
 
-http://cloudmart-1903054.canadacentral.azurecontainer.io/
+http://cloudmart-1904593.canadacentral.azurecontainer.io/
 
 ---
 
@@ -158,13 +158,13 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
 
 ### Docker Hub Repository
 
-https://hub.docker.com/repository/docker/mnmahy34/cloudmart-api/general
+https://hub.docker.com/repository/docker/mjhossain4/cloudmart-api/general
 
 ---
 
 ## 6. GitHub Actions CI/CD
 
-https://github.com/mnmahy34/cloudmart-mnmahy
+https://github.com/mjhossain4/cloudmart-mnmahy
 
 ### Workflows included:
 
@@ -213,14 +213,14 @@ Validate health endpoint
 az container create \
   --name cloudmart-app \
   --resource-group Student-RG-1903054 \
-  --image mnmahy34/cloudmart-api:latest \
+  --image mjhossain4/cloudmart-api:latest \
   --cpu 1 \
   --memory 1.5 \
   --os-type Linux \
   --ports 80 \
-  --dns-name-label cloudmart-1903054 \
+  --dns-name-label cloudmart-1904593 \
   --environment-variables \
-      COSMOS_ENDPOINT="https://cloudmart-db-1903054.documents.azure.com:443/" \
+      COSMOS_ENDPOINT="https://cloudmart-db-1904593.documents.azure.com:443/" \
       COSMOS_KEY="$COSMOS_KEY"
 ```
 
@@ -271,48 +271,48 @@ GitHub Actions logs clean
 ## 11. Complete Command Log
 
 az cosmosdb create \
-  --name cloudmart-db-1903054 \
-  --resource-group Student-RG-1903054 \
+  --name cloudmart-db-1904593 \
+  --resource-group Student-RG-1904593 \
   --kind GlobalDocumentDB \
   --locations regionName=canadacentral failoverPriority=0 \
   --default-consistency-level Eventual
 
 
 az cosmosdb sql database create \
-  --account-name cloudmart-db-1903054 \
-  --resource-group Student-RG-1903054 \
+  --account-name cloudmart-db-1904593 \
+  --resource-group Student-RG-1904593 \
   --name cloudmart
 
 az cosmosdb sql container create \
-  --account-name cloudmart-db-1903054 \
-  --resource-group Student-RG-1903054 \
+  --account-name cloudmart-db-1904593 \
+  --resource-group Student-RG-1904593 \
   --database-name cloudmart \
   --name products \
   --partition-key-path "/category"
 
 az cosmosdb sql container create \
-  --account-name cloudmart-db-1903054 \
-  --resource-group Student-RG-1903054 \
+  --account-name cloudmart-db-1904593 \
+  --resource-group Student-RG-1904593 \
   --database-name cloudmart \
   --name cart \
   --partition-key-path "/user_id"
 
 az cosmosdb sql container create \
-  --account-name cloudmart-db-1903054 \
-  --resource-group Student-RG-1903054 \
+  --account-name cloudmart-db-1904593 \
+  --resource-group Student-RG-1904593 \
   --database-name cloudmart \
   --name orders \
   --partition-key-path "/user_id"
 
 az network nsg create \
-  --resource-group Student-RG-1903054 \
+  --resource-group Student-RG-1904593 \
   --name cloudmart-web-nsg \
   --location canadacentral
 
 
 
 az network nsg rule create \
-  --resource-group Student-RG-1903054 \
+  --resource-group Student-RG-1904593 \
   --nsg-name cloudmart-web-nsg \
   --name Allow-HTTP \
   --priority 100 \
@@ -324,7 +324,7 @@ az network nsg rule create \
   --destination-port-ranges 80
 
 az network nsg rule create \
-  --resource-group Student-RG-1903054 \
+  --resource-group Student-RG-1904593 \
   --nsg-name cloudmart-web-nsg \
   --name Allow-HTTPS \
   --priority 110 \
@@ -336,7 +336,7 @@ az network nsg rule create \
   --destination-port-ranges 443
 
 az network nsg rule create \
-  --resource-group Student-RG-1903054 \
+  --resource-group Student-RG-1904593 \
   --nsg-name cloudmart-web-nsg \
   --name Allow-SSH \
   --priority 120 \
@@ -350,13 +350,13 @@ az network nsg rule create \
 
 az container create \
   --name cloudmart-app \
-  --resource-group Student-RG-1903054 \
-  --image mnmahy34/cloudmart-api:latest \
+  --resource-group Student-RG-1904593 \
+  --image mjhossain4/cloudmart-api:latest \
   --cpu 1 \
   --memory 1.5 \
   --os-type Linux \
   --ports 80 \
-  --dns-name-label cloudmart-1903054 \
+  --dns-name-label cloudmart-1904593 \
   --environment-variables \
     COSMOS_ENDPOINT="My_CosmosDB_EndPoint" \
     COSMOS_KEY="My_CosmosDB_Key"
