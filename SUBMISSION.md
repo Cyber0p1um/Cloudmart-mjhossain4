@@ -91,13 +91,13 @@ Backend | FastAPI (Python 3.11)
 
 Resource | Name
 --- | ---
-Resource Group | Student-RG-1903054
-Cosmos DB Account | cloudmart-db-1903054
+Resource Group | Student-RG-1904593
+Cosmos DB Account | cloudmart-db-1904593
 Cosmos Database | cloudmartdb
 Containers | products, cart, orders
 ACI Container Instance | cloudmart-app
-DNS Label | cloudmart-1903054
-Public URL | http://cloudmart-1903054.canadacentral.azurecontainer.io/
+DNS Label | cloudmart-1904593
+Public URL | http://cloudmart-1904593.canadacentral.azurecontainer.io/
 NSG | cloudmart-web-nsg
 
 ## 3. Cosmos DB Configuration
@@ -164,7 +164,7 @@ https://hub.docker.com/repository/docker/mjhossain4/cloudmart-api/general
 
 ## 6. GitHub Actions CI/CD
 
-https://github.com/mjhossain4/cloudmart-mnmahy
+https://github.com/mjhossain4/cloudmart-mjhossain4
 
 ### Workflows included:
 
@@ -212,7 +212,7 @@ Validate health endpoint
 ```
 az container create \
   --name cloudmart-app \
-  --resource-group Student-RG-1903054 \
+  --resource-group Student-RG-1904593 \
   --image mjhossain4/cloudmart-api:latest \
   --cpu 1 \
   --memory 1.5 \
